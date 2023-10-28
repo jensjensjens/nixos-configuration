@@ -1,0 +1,67 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$line_break\
+$character"""
+
+right_format = """
+$pulumi\
+$python\
+$azure \
+$kubernetes\
+"""
+
+add_newline = false
+
+[directory]
+style = "blue"
+
+[character]
+success_symbol = '[\[I\]](purple)'
+error_symbol = '[\[I\]](red)'
+
+vimcmd_symbol = '[\[N\]](green)'
+vimcmd_visual_symbol = '[\[V\]](yellow)'
+
+[git_branch]
+format = "[$branch]($style)"
+style = "yellow"
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+style = "cyan"
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = "≡"
+
+[azure]
+disabled = false
+format = '[(\($symbol$subscription\)) ]($style)'
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+# Right prompt formatting
+[python]
+format = '[(\($symbol $virtualenv\)) ]($style)'
+style = "bright-black"
+
+[pulumi]
+disabled = false
+format = '[(\($symbol$stack\)) ]($style)'
+
+[kubernetes]
+format = '[(\($symbol$context( \($namespace\))\)) ]($style)'
+disabled = false
+

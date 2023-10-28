@@ -1,0 +1,39 @@
+{ pkgs, ... }:
+
+{
+  home.packages = with pkgs; [
+    cargo
+    docker-credential-helpers
+    fd
+    fluxcd
+    gcc
+    gitui
+    gnome.nautilus
+    go_1_21
+    htop
+    httpie
+    jq
+    kubectl
+    kubernetes-helm
+    nixfmt
+    nodejs
+    page
+    powershell
+    pulumi
+    python311
+    ranger
+    ripgrep
+    slides
+    sops
+    starship
+    statix
+    tree-sitter
+    unzip
+    viddy
+    wget
+    xclip
+    xplr
+    yq
+    zellij
+  ];
+}

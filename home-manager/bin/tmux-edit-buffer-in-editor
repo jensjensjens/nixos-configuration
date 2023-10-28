@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+file=$(mktemp).log
+tmux capture-pane -pS -32768 >$file
+tmux new-window -n:tmux-buffer "${EDITOR} '+ normal G $' $file"
