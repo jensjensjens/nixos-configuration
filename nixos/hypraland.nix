@@ -1,19 +1,18 @@
 { config, pkgs, ... }:
 let
-in {
+in
+{
   programs.hyprland = {
-  	enable = true;
-  	xwayland.enable = true;
+    enable = true;
+    xwayland.enable = true;
   };
+
+  security.pam.services.swaylock = { };
 
   environment.systemPackages = with pkgs; [
     sway-contrib.grimshot # screenshot
     wdisplays # tool to configure displays
     wofi # menu
     hyprpaper
-    waybar
   ];
-
-  # xdg.portal.enable = true;
-  # xdg.portal.extraPortals = with pkgs; [ xdg-desktop-portal-wlr ];
 }

@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ hyprland, inputs, config, pkgs, lib, ... }:
 
 let
   imports =
@@ -25,7 +25,6 @@ in
       MANPAGER = "page -t man";
       PAGER = "page";
       PULUMI_SKIP_UPDATE_CHECK = "true";
-      NIXOS_OZONE_WL = "1";
     };
 
     shellAliases = {
